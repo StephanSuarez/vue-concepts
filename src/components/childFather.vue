@@ -1,6 +1,6 @@
 <template>
   <h6>Sending data Father to Child</h6>
-  <childFatherT :get-user="getUserName" :nnn="hol" :get-num="getNum"/>
+  <childFatherT :get-user="getUserName" :nnn="'hol'" :get-num="getNum"/>
 </template>
 
 <script>

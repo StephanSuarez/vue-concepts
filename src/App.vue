@@ -33,6 +33,36 @@
     <h3>Data child to father</h3>
     <childFatherVue />
   </div>
+  <div>
+    <h3>Computed Property</h3>
+    <computedProperty :number="0" />
+  </div>
+  <div>
+    <h3>Watch Property</h3>
+    <watchProperty /> 
+  </div>
+  <div>
+    <h3 style="background-color: brown;">SLOTS</h3>
+    <h3>Basic Slot</h3>
+    <basicSlot>
+      <p>M a slot and I take a property in app.vue: {{ slot }}</p>
+    </basicSlot>
+  </div>
+  <div>
+    <h3>Nominal Slot</h3>
+    <nominalSlot>
+      <template v-slot:section>
+        <p>section one</p>
+      </template>
+      <template v-slot: section-two>
+        <p>section two</p>
+      </template>
+    </nominalSlot>
+  </div>
+  <div>
+    <h3>Dinamic Component</h3>
+    <dinamic-component />
+  </div>
 </template>
 
 <script>
@@ -44,9 +74,19 @@ import ForLoop from './components/ForLoop.vue';
 import htmlBinding from './components/htmlBinding.vue';
 import dinamicClass from './components/dinamicClass.vue';
 import childFatherVue from './components/childFather.vue';
+import computedProperty from './components/2_avn/computedProperty.vue';
+import watchProperty from './components/2_avn/watchProperty.vue';
+import basicSlot from './components/2_avn/slotBasic.vue';
+import nominalSlot from './components/2_avn/slotNominal.vue';
+import dinamicComponent from './components/2_avn/dinamicComponents.vue';
 
 export default {
   name: 'App',
+  data() {
+    return {
+      slot: "slot"
+    }
+  },
   components: {
     MyComponent,
     MyInterpolation,
@@ -55,7 +95,12 @@ export default {
     ForLoop,
     htmlBinding,
     dinamicClass,
-    childFatherVue
+    childFatherVue,
+    computedProperty,
+    watchProperty,
+    basicSlot,
+    nominalSlot,
+    dinamicComponent
   }
 }
 </script>
